@@ -1,5 +1,7 @@
 package service;
 
+import dto.Customer;
+import dto.Order;
 import dto.Owner;
 import dto.Product;
 
@@ -23,23 +25,36 @@ public class Service {
     public static int TodayDept() {
 
         // 구현
+        // 현재 잔액에 따른 이율 적용
 
         return 0;
     }
 
     // 물건 구매
-    public static void Buying() {
+    public static void Buying(List<Order> list) {
 
+        // 1. 재고 변경
+        // 2. 잔액 변경
+        // 3. 순수익 변경
     }
 
     // 장사 개시
     public static void openShop() {
 
+        List<Customer> customers = new ArrayList<>();
+        // 손님 수 : 랜덤
+        // 주문내용 : 랜덤
+
+        // 1. 재고 변경
+        // 2. 잔액 변경
+        // 3. 순수익 변경
     }
 
     // 중도 상환
     public static void repayment(int input) {
 
+        // 1. 잔액 변경
+        // 2. 남은 대출금 변경
     }
 
 

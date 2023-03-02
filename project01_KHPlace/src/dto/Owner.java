@@ -9,8 +9,9 @@ public class Owner {
     int dept; // 남은 대출금
     int day; // 현재 진행날짜
     int totalRevenue; // 순수익
+    Map<Product, Integer> stock; // 현재 재고
 
-    Map<Product, Integer> stock;
+    private static final double INTEREST = 0.1;
 
     public Owner(String name, String ceo) {
         this.name = name;
