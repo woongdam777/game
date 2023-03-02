@@ -1,5 +1,6 @@
 package dto;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Owner {
@@ -10,7 +11,7 @@ public class Owner {
     int day; // 현재 진행날짜
     int totalRevenue; // 순수익
 
-    Map<Product, Integer> stock;
+    Map<Product, Integer> stock = new HashMap<>();
 
     public Owner(String name, String ceo) {
         this.name = name;
