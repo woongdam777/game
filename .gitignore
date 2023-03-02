@@ -21,7 +21,8 @@ HELP.md
 out/
 
 # Java Project
-.porject
+.project
+.classpath
 .metadata/
 bin/
 .settings/
