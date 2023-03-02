@@ -21,10 +21,11 @@ public class Service {
 
     // 이번 턴에 내야하는 이자 계산
     public static int TodayDept() {
+    	// 구현
 
-        // 구현
-
-        return 0;
+    	int nowInterest = (int)(owner.getDept() * Owner.INTEREST);
+    	
+        return nowInterest;
     }
 
     // 물건 구매
