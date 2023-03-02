@@ -1,0 +1,38 @@
+package view;
+
+import java.util.Scanner;
+
+public class InitialScreenView {
+
+    private Scanner sc = new Scanner(System.in);
+    private MainView mainView = new MainView();
+    private CreatersView creatersView = new CreatersView();
+
+    public void displayInitialScreenView() {
+        int input = 0;
+
+        while(true) {
+            try {
+                System.out.println("KH PLACE");
+                System.out.println("1. 게임 시작");
+                System.out.println("2. 만든 사람");
+                System.out.println("3. 게임 종료\n");
+
+                System.out.print("입력>>>>");
+                input = sc.nextInt(); sc.nextLine();
+
+                switch (input) {
+                    case 1: mainView.initialInput(); break;
+                    case 2: creatersView.displayCreatersView(); break;
+                    case 3: System.out.println("게임 종료"); return;
+                    default: System.out.println("잘못된 입력 방식입니다");
+                }
+
+            } catch (Exception e) {
+                System.out.println("[잘못된 형식의 입력입니다.]\n");
+                sc.nextLine(); //
+                input = -1; //
+            }
+        }
+    }
+}
