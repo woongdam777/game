@@ -7,6 +7,7 @@ public class InitialScreenView {
     private Scanner sc = new Scanner(System.in);
     private MainView mainView = new MainView();
     private CreatersView creatersView = new CreatersView();
+    private EndView endView = new EndView();
 
     public void displayInitialScreenView() {
         int input = 0;
@@ -23,8 +24,8 @@ public class InitialScreenView {
 
                 switch (input) {
                     case 1: mainView.initialInput(); break;
-                    case 2: creatersView.displayCreatersView(); break;
-                    case 3: System.out.println("게임 종료"); return;
+                    case 2: creatersView.displayCreatersView(); return;
+                    case 3: endView.displayEndView(); return;
                     default: System.out.println("잘못된 입력 방식입니다");
                 }
 
