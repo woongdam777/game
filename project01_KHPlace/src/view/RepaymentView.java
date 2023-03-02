@@ -4,6 +4,8 @@ import service.Service;
 
 import java.util.Scanner;
 
+import dto.Owner;
+
 public class RepaymentView {
 
     Scanner sc = new Scanner(System.in);
@@ -11,17 +13,18 @@ public class RepaymentView {
     public void displayRepaymentMenu() {
         System.out.println("상환");
 
-        int loan = 5000; // 대출금
+        Owner owner = Service.getOwner();
+  
 
         while(true) {
             System.out.println("======중도상환======");
-            System.out.printf("남은 대출금 : %5d kh\n",loan);
+            System.out.printf("남은 대출금 : %5d kh\n",owner.getDept());
             System.out.print("갚을 대출금을 입력해주세요(kh) : ");
             int repay = sc.nextInt();
             sc.nextLine();
 
-            loan = loan- repay;
-            System.out.printf("남은 대출금 : %5d kh\n",loan);
+            Service.repayment(repay);
+            System.out.printf("남은 대출금 : %5d kh\n",owner.getDept());
 
             System.out.println("1. 대출금 갚기");
             System.out.println("2. 돌아가기");
