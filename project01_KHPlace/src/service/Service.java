@@ -35,9 +35,7 @@ public class Service {
 
     // 이번 턴에 내야하는 이자 계산
     public static int TodayDept() {
-
-        // 구현
-
+    // 구현
         return 0;
     }
 
@@ -74,10 +72,22 @@ public class Service {
 
     }
 
-    // 중도 상환
+    // 이자 상환
     public static void repayment(int input) {
-
+    	owner.setDept(owner.getDept() - input);
     }
+    
+    // 순수익 (매출액 - 매입원가)
+    // 매출액 : sellproduct 클래스
+    // 매입 원가 : 
+    public static void totalrevenue() {
+    	
+    }
+    
+    // 프로그램 종료
+    public static void exit(int status) {
+    	  Runtime.getRuntime().exit(status);
+    	}
 
 
 }

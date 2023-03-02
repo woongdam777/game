@@ -14,6 +14,7 @@ public class MainView {
     private RepaymentView repaymentView = new RepaymentView();
     private SellProductView sellProductView = new SellProductView();
     private StockProductView stockProductView = new StockProductView();
+    private EndView endView = new EndView();
 
     private static Service service;
 
@@ -85,7 +86,7 @@ public class MainView {
                         repaymentView.displayRepaymentMenu();
                         break; // 중도 상환 화면
                     case 0:
-                        System.out.println("게임 끝");
+                    	endView.displayEndView();
                         break; // 게임 오버 화면으로 넘김
                     default:
                         System.out.println("[잘못 입력하셨습니다.]");
