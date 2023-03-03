@@ -16,35 +16,21 @@ public class MainView {
     private StockProductView stockProductView = new StockProductView();
     private EndView endView = new EndView();
 
-    private static Service service;
-
-    public void clearScreen() {
-        try {
-            final String os = System.getProperty("os.name");
-            if(os.contains("Windows"))
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            else
-                Runtime.getRuntime().exec("clear");
-        }catch (Exception e) {
-            // TODO: handle exception
-        }
-    }
-
     /**
      * 1. 게임 시작을 눌렀을 때 시작되는 화면
      */
     public void initialInput() {
+        Service.clearScreen(); // 화면 초기화
+
         System.out.println("축하드립니다!\n"
-                + "당신은 꿈에 그리던 카페 사장이 되었습니다. \n카페 이름을 정해주세요.");
-        System.out.println();
+                         + "당신은 꿈에 그리던 카페 사장이 되었습니다.\n"
+                         + "카페 이름을 정해주세요.\n");
         System.out.print("카페 이름 :");
         String name = sc.nextLine();
         System.out.print("사장 이름 :");
         String ceo = sc.nextLine();
 
-        service = new Service(name, ceo);
-
-        clearScreen();
+        Service.createOwner(name, ceo);
         displayMainMenu();
     }
 
@@ -83,7 +69,6 @@ public class MainView {
                 sc.nextLine(); // 입력버퍼에 남은 개행문자 제거
 
                 System.out.println();
-                clearScreen();
 
                 switch (input) {
 
