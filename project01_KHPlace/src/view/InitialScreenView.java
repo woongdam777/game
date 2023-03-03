@@ -1,5 +1,7 @@
 package view;
 
+import service.Service;
+
 import java.util.Scanner;
 
 public class InitialScreenView {
@@ -14,6 +16,8 @@ public class InitialScreenView {
 
         while(true) {
             try {
+                Service.clearScreen(); // 화면 초기화
+
                 System.out.println("KH PLACE");
                 System.out.println("1. 게임 시작");
                 System.out.println("2. 만든 사람");

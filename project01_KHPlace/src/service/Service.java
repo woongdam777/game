@@ -13,15 +13,17 @@ public class Service {
     private static Owner owner;
     private static List<Product> productList = new ArrayList<>(); // 물건 목록
 
-    public Service(String name, String ceo) {
-        owner = new Owner(name, ceo);
-        
+    public Service() {
         productList.add(new Product("아메리카노",150,200));
         productList.add(new Product("카페라뗴",100,200));
         productList.add(new Product("카푸치노",300,500));
         productList.add(new Product("베이글",250,200));
         productList.add(new Product("케이크",100,200));
         productList.add(new Product("샌드위치",50,250));
+    }
+
+    public static void createOwner(String name, String ceo) {
+        owner = new Owner(name, ceo);
     }
 
     public static Owner getOwner() {
@@ -89,4 +91,18 @@ public class Service {
     	}
 
 
+    /**
+     * 콘솔 화면을 새로고침
+     */
+    public static void clearScreen() {
+        try {
+            final String os = System.getProperty("os.name");
+            if(os.contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                Runtime.getRuntime().exec("clear");
+        }catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
 }
