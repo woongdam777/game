@@ -22,7 +22,6 @@ public class Service {
         productList.add(new Product("베이글",250,200));
         productList.add(new Product("케이크",100,200));
         productList.add(new Product("샌드위치",50,250));
-        
     }
 
     public static Owner getOwner() {
